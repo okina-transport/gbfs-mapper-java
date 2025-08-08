@@ -9,7 +9,6 @@ import org.mobilitydata.gbfs.v3_0.system_information.GBFSData;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 class SystemInformationAdditionalMapperUnitTest {
 
@@ -34,7 +33,7 @@ class SystemInformationAdditionalMapperUnitTest {
     void mapOpeningHours_test_null_system_hours() {
         TestSubject subject = new TestSubject();
         String result = subject.mapOpeningHours(null);
-        assertNull(result);
+        assertEquals("Mo-Su,PH 00:00-24:00", result);
     }
 
     @Test
