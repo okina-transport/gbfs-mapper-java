@@ -4,7 +4,7 @@
 
     <groupId>com.okina</groupId>
     <artifactId>gbfs-mapper-java</artifactId>
-    <version>2.0.44</version>
+    <version>2.1.0-mobi-iti-SNAPSHOT</version>
     <name>gbfs-mapper-java</name>
 
     <description>Enables mapping between different versions of GBFS (bidirectional)</description>
