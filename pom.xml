@@ -270,65 +270,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
-                <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.jreleaser</groupId>
-                <artifactId>jreleaser-maven-plugin</artifactId>
-                <version>1.19.0</version>
-                <configuration>
-                    <jreleaser>
-                        <signing>
-                            <active>ALWAYS</active>
-                            <armored>true</armored>
-                        </signing>
-                        <deploy>
-                            <maven>
-                                <mavenCentral>
-                                    <sonatype>
-                                        <active>RELEASE</active>
-                                        <url>https://central.sonatype.com/api/v1/publisher</url>
-                                        <stagingRepositories>target/staging-deploy</stagingRepositories>
-                                    </sonatype>
-                                </mavenCentral>
-                                <nexus2>
-                                    <maven-central>
-                                        <active>SNAPSHOT</active>
-                                        <url>https://ossrh-staging-api.central.sonatype.com/service/local</url>
-                                        <snapshotUrl>https://central.sonatype.com/repository/maven-snapshots</snapshotUrl>
-                                        <applyMavenCentralRules>true</applyMavenCentralRules>
-                                        <snapshotSupported>true</snapshotSupported>
-                                        <closeRepository>true</closeRepository>
-                                        <releaseRepository>true</releaseRepository>
-                                        <stagingRepositories>target/staging-deploy</stagingRepositories>
-                                    </maven-central>
-                                </nexus2>
-                            </maven>
-                        </deploy>
-                        <release>
-                            <github>
-                                <skipTag>false</skipTag>
-                                <skipRelease>true</skipRelease>
-                            </github>
-                        </release>
-                    </jreleaser>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
